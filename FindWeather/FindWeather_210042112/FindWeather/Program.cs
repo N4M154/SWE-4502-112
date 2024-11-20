@@ -25,7 +25,18 @@ namespace FindWeather
                         break;
 
                     case 2: // By City (OpenWeatherMap)
-                        
+                        Console.Write("Enter city name: ");
+                        string city = Console.ReadLine();
+                        if (string.IsNullOrWhiteSpace(city))
+                        {
+                            var weatherUsingIPLocation = await facade.GetWeatherByCityAsync(null);
+                            Console.WriteLine($"Weather in {weatherUsingIPLocation.City} from {weatherUsingIPLocation.Source}: {weatherUsingIPLocation.Temperature}°C, {weatherUsingIPLocation.Condition}");
+                        }
+                        else
+                        {
+                           
+                        }
+                        break;
 
                     case 3: // Exit
                         Console.WriteLine("Exiting...");
