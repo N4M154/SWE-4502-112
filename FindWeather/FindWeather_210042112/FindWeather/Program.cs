@@ -20,7 +20,9 @@ namespace FindWeather
                 switch (choice)
                 {
                     case 1: // By IP (WeatherStack)
-                        
+                        var weatherByIP = await facade.GetWeatherByIPAsync();
+                        Console.WriteLine($"Weather in {weatherByIP.City} from {weatherByIP.Source}: {weatherByIP.Temperature}°C, {weatherByIP.Condition}");
+                        break;
 
                     case 2: // By City (OpenWeatherMap)
                         
