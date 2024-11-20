@@ -42,5 +42,17 @@ namespace FindWeather
 
             return data;
         }
+
+        public async Task<WeatherData> GetWeatherByCityAsync(string city)
+        {
+            
+            if (cache.ContainsKey(city) && (DateTime.Now - cache[city].Item2).TotalMinutes < 10)
+            {
+                return cache[city].Item1;
+            }
+
+            
+        }
     }
 }
+
