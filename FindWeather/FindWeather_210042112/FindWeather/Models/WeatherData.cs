@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FindWeather.Models
+namespace FindWeather
 {
     public class WeatherData
     {
@@ -12,7 +12,7 @@ namespace FindWeather.Models
         public double Temperature { get; set; }
         public string Condition { get; set; }
 
-        public string source { get; set; }
+        public string Source { get; set; }
         
     }
 }

@@ -1,12 +1,13 @@
-﻿using FindWeather.APIs;
-using FindWeather.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
-namespace FindWeather.Adapters
+
+namespace FindWeather
 {
     public class WeatherStackAdapter:IWeatherProvider
     {
