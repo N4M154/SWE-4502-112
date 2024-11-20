@@ -20,7 +20,8 @@ namespace FindWeather.Adapters
             {
                 City = json.RootElement.GetProperty("location").GetProperty("name").GetString(),
                 Temperature = json.RootElement.GetProperty("current").GetProperty("temperature").GetDouble(),
-                
+                Condition = json.RootElement.GetProperty("current").GetProperty("weather_descriptions")[0].GetString(),
+                Source = "WeatherStack"
             };
         }
 
