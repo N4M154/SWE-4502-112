@@ -18,6 +18,10 @@ namespace FindWeather.APIs
             return await client.GetStringAsync(url);
         }
 
-        
+        public async Task<string> FetchWeatherDataByCityAsync(string city)
+        {
+            string url = $"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={apiKey}";
+            return await client.GetStringAsync(url);
+        }
     }
 }
