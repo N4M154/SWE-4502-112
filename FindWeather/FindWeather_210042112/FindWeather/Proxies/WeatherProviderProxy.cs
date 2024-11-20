@@ -17,6 +17,17 @@ namespace FindWeather
             this.provider = provider;
         }
 
+        public async Task<WeatherData> GetWeatherAsync(double latitude, double longitude)
+        {
+            string key = $"{latitude},{longitude}";
 
+           
+            if (cache.ContainsKey(key) && (DateTime.Now - cache[key].Item2).TotalMinutes < 10)
+            {
+                return cache[key].Item1;
+            }
+
+            
+        }
     }
 }
