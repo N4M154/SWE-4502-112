@@ -8,8 +8,12 @@ namespace FindWeather
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+            var facade = new WeatherFacade();
+
+            Console.WriteLine("Select location method: 1. By IP, 2. By City, 3. Exit");
+            int choice = int.Parse(Console.ReadLine());
         }
     }
 }
