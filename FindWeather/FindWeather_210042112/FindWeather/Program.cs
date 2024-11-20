@@ -34,7 +34,8 @@ namespace FindWeather
                         }
                         else
                         {
-                           
+                            var weatherByCity = await facade.GetWeatherByCityAsync(city);
+                            Console.WriteLine($"Weather in {weatherByCity.City} from {weatherByCity.Source}: {weatherByCity.Temperature}°C, {weatherByCity.Condition}");
                         }
                         break;
 
