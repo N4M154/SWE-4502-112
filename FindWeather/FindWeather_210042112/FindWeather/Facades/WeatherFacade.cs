@@ -40,5 +40,17 @@ namespace FindWeather
             return (latitude, longitude);
         }
 
+        public async Task<WeatherData> GetWeatherByCityAsync(string city)
+        {
+            if (cachedLocation.HasValue)
+            {
+                var location = cachedLocation.Value;
+                Console.WriteLine($"Using cached location for latitude: {location.Latitude}, longitude: {location.Longitude}");
+                
+            }
+
+            
+        }
+
     }
 }
