@@ -11,5 +11,12 @@ namespace FindWeather
         private readonly IWeatherProvider provider;
         private readonly Dictionary<string, (WeatherData, DateTime)> cache = new Dictionary<string, (WeatherData, DateTime)>();
         private DateTime lastRequestTime = DateTime.MinValue;
+
+        public WeatherProviderProxy(IWeatherProvider provider)
+        {
+            this.provider = provider;
+        }
+
+
     }
 }
