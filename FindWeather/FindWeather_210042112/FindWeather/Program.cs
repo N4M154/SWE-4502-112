@@ -17,7 +17,22 @@ namespace FindWeather
 
             try
             {
-                
+                switch (choice)
+                {
+                    case 1: // By IP (WeatherStack)
+                        
+
+                    case 2: // By City (OpenWeatherMap)
+                        
+
+                    case 3: // Exit
+                        Console.WriteLine("Exiting...");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice!");
+                        break;
+                }
             }
             catch (Exception ex)
             {
