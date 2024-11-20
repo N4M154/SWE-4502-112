@@ -19,7 +19,8 @@ namespace FindWeather
             {
                 City = json.RootElement.GetProperty("name").GetString(),
                 Temperature = json.RootElement.GetProperty("main").GetProperty("temp").GetDouble(),
-                
+                Condition = json.RootElement.GetProperty("weather")[0].GetProperty("description").GetString(),
+                Source = "OpenWeatherMap"
             };
         }
 
