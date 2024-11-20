@@ -34,6 +34,13 @@ namespace FindWeather
             }
 
             
+            var data = await provider.GetWeatherAsync(latitude, longitude);
+
+            
+            cache[key] = (data, DateTime.Now);
+            lastRequestTime = DateTime.Now;
+
+            return data;
         }
     }
 }
