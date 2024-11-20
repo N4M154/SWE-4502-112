@@ -24,5 +24,13 @@ namespace FindWeather
             };
         }
 
+        public async Task<WeatherData> GetWeatherByCityAsync(string city)
+        {
+            var response = await baseClient.FetchWeatherDataByCityAsync(city);
+            var json = JsonDocument.Parse(response);
+
+           
+        }
+
     }
 }
