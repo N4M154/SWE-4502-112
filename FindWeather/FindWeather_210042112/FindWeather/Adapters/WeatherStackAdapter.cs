@@ -24,7 +24,10 @@ namespace FindWeather.Adapters
                 Source = "WeatherStack"
             };
         }
+        public async Task<WeatherData> GetWeatherByCityAsync(string city)
+        {
+            throw new NotImplementedException("This adapter does not support city-based lookups.");
+        }
 
-        
     }
 }
