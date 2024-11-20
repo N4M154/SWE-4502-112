@@ -28,6 +28,13 @@ namespace FindWeather
             cachedLocation = location;
             return await weatherStackProxy.GetWeatherAsync(location.Latitude, location.Longitude);
         }
-        
+
+        public async Task<(double Latitude, double Longitude)> GetLocationAsync()
+        {
+            string ip = await new HttpClient().GetStringAsync("https://api.ipify.org");
+            string url = $"http://api.ipstack.com/{ip}?access_key=de9240a0520081a9ce9e78214ec3e707";
+            
+        }
+
     }
 }
