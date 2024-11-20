@@ -21,10 +21,16 @@ namespace FindWeather
         {
             string key = $"{latitude},{longitude}";
 
-           
+            
             if (cache.ContainsKey(key) && (DateTime.Now - cache[key].Item2).TotalMinutes < 10)
             {
                 return cache[key].Item1;
+            }
+
+            
+            if ((DateTime.Now - lastRequestTime).TotalSeconds < 30)
+            {
+                throw new Exception("Rate limit reached. Please wait.");
             }
 
             
