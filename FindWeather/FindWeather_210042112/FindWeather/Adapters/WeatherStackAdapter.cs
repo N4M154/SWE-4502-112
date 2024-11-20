@@ -15,7 +15,13 @@ namespace FindWeather.Adapters
         {
             var response = await baseClient.FetchWeatherDataAsync(latitude, longitude);
             var json = JsonDocument.Parse(response);
-            
+
+            return new WeatherData
+            {
+                City = json.RootElement.GetProperty("location").GetProperty("name").GetString(),
+                Temperature = json.RootElement.GetProperty("current").GetProperty("temperature").GetDouble(),
+                
+            };
         }
 
         
